@@ -1,0 +1,228 @@
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #17152a;
+  font-family: Arial, sans-serif;
+  touch-action: none;
+  user-select: none;
+}
+
+#game {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #17152a;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  image-rendering: pixelated;
+}
+
+.hud {
+  position: absolute;
+  top: env(safe-area-inset-top, 12px);
+  left: 18px;
+  right: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  pointer-events: none;
+}
+
+.logo {
+  font-weight: 900;
+  letter-spacing: 3px;
+  font-size: 17px;
+}
+
+.logo span {
+  color: #e79bdc;
+}
+
+#mission {
+  color: #e7d5f4;
+  font-size: 12px;
+  background: #302744bb;
+  padding: 9px 13px;
+  border-radius: 20px;
+}
+
+.controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  padding: 0 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.movement, .actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control {
+  width: 62px;
+  height: 62px;
+  border: 1px solid #ffffff55;
+  border-radius: 19px;
+  color: white;
+  background: #392e59cc;
+  font-size: 27px;
+  font-weight: bold;
+  box-shadow: 0 5px 18px #0005;
+  touch-action: none;
+}
+
+.control:active {
+  background: #9562b7;
+  transform: scale(.94);
+}
+
+.jump {
+  background: #7545a4dd;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+}
+
+.interact {
+  background: #d35ca9dd;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.message, .ending {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: #100d20dd;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.message.visible, .ending.visible {
+  display: flex;
+}
+
+.message-card, .ending-card {
+  width: min(430px, 100%);
+  background: linear-gradient(145deg, #35264b, #1e1930);
+  border: 1px solid #d99bdd66;
+  border-radius: 25px;
+  padding: 30px 23px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 15px 60px #0008;
+  animation: appear .5s ease;
+}
+
+.small-title {
+  color: #e6a6dd;
+  font-size: 11px;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+.message-card h1, .ending-card h1 {
+  font-family: Georgia, serif;
+  font-size: 32px;
+  font-weight: normal;
+}
+
+.message-card p, .ending-card p {
+  color: #d7c7e5;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.message-card button, .ending-buttons button {
+  border: none;
+  border-radius: 14px;
+  padding: 16px 20px;
+  width: 100%;
+  background: #d36ab8;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 12px;
+}
+
+.heart {
+  color: #f58bc9;
+  font-size: 55px;
+  margin-top: 18px;
+  animation: pulse 1.2s infinite;
+}
+
+.ending-buttons button:last-child {
+  background: #55446b;
+}
+
+#answer {
+  min-height: 20px;
+  font-size: 13px;
+}
+
+#rotate {
+  display: none;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.2); }
+}
+
+@media (orientation: portrait) {
+  #rotate {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: #17152a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 35px;
+  }
+
+  #rotate div {
+    font-size: 65px;
+    color: #e79bdc;
+  }
+
+  #rotate p {
+    max-width: 260px;
+    line-height: 1.6;
+  }
+}
