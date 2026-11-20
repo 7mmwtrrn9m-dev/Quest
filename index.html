@@ -1,0 +1,113 @@
+
+
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+
+  <meta name="theme-color" content="#17152a">
+
+  <title>ANNA QUEST</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <main id="game">
+
+    <canvas id="screen"></canvas>
+
+    <div class="hud">
+
+      <div class="logo">ANNA <span>QUEST</span></div>
+
+      <div id="mission">Найди секретное письмо</div>
+
+    </div>
+
+    <div class="controls">
+
+      <div class="movement">
+
+        <button class="control" id="left">◀</button>
+
+        <button class="control" id="right">▶</button>
+
+      </div>
+
+      <div class="actions">
+
+        <button class="control jump" id="jump">↑</button>
+
+        <button class="control interact" id="interact">✦</button>
+
+      </div>
+
+    </div>
+
+    <div id="message" class="message">
+
+      <div class="message-card">
+
+        <div class="small-title">SECRET MESSAGE</div>
+
+        <h1>Ты нашла письмо!</h1>
+
+        <p>Кажется, оно предназначено именно тебе...</p>
+
+        <button id="openLetter">ОТКРЫТЬ ПИСЬМО</button>
+
+      </div>
+
+    </div>
+
+    <div id="ending" class="ending">
+
+      <div class="ending-card">
+
+        <div class="small-title">QUEST COMPLETED</div>
+
+        <div class="heart">♥</div>
+
+        <h1>Анечка,</h1>
+
+        <p>У меня есть одна идея...</p>
+
+        <p>Может, устроим небольшой побег от повседневности и проведём один прекрасный вечер вместе?</p>
+
+        <div class="ending-buttons">
+
+          <button id="yes">ДА, ДАВАЙ ❤️</button>
+
+          <button id="later">Я ПОДУМАЮ</button>
+
+        </div>
+
+        <p id="answer"></p>
+
+      </div>
+
+    </div>
+
+    <div id="rotate">
+
+      <div>↻</div>
+
+      <p>Для лучшего игрового опыта поверни телефон горизонтально</p>
+
+    </div>
+
+  </main>
+
+  <script src="game.js"></script>
+
+</body>
+
+</html>
